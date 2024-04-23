@@ -69,7 +69,7 @@ To upload a crash report other than the Apple format, make sure the log type is 
 curl -X POST \
   'https://in.appcenter.ms/logs?Api-Version=1.0.0' \
   -H 'Content-Type: application/json' \
-  -H 'app-secret: 8e14e67c-7c91-40ac-8517-c62ece8424a6' \
+  -H 'app-secret: <app secret>' \
   -H 'install-id: 00000000-0000-0000-0000-000000000001' \
   -d '{
   "logs": [
@@ -194,7 +194,7 @@ For example:
 curl -X POST \
   'https://in.appcenter.ms/logs?Api-Version=1.0.0' \
   -H 'Content-Type: application/json' \
-  -H 'app-secret: 8e14e67c-7c91-40ac-8517-c62ece8424a6' \
+  -H 'app-secret: <app secret>' \
   -H 'install-id: 00000000-0000-0000-0000-000000000001' \
   -d '{
   "logs":
@@ -315,7 +315,7 @@ For example:
 curl -X POST \
   'https://in.appcenter.ms/logs?Api-Version=1.0.0' \
   -H 'Content-Type: application/json' \
-  -H 'app-secret: 8e14e67c-7c91-40ac-8517-c62ece8424a6' \
+  -H 'app-secret: <app secret>' \
   -H 'install-id: 00000000-0000-0000-0000-000000000001' \
   -d '{
   "logs": [
@@ -436,7 +436,7 @@ For example:
 curl -X POST \
   'https://in.appcenter.ms/logs?Api-Version=1.0.0' \
   -H 'Content-Type: application/json' \
-  -H 'app-secret: 8e14e67c-7c91-40ac-8517-c62ece8424a6' \
+  -H 'app-secret: <app secret>' \
   -H 'install-id: 00000000-0000-0000-0000-000000000001' \
   -d '{
   "logs":
@@ -524,7 +524,7 @@ Handled errors are only supported for Android, Xamarin, Unity, UWP, WPF, and Win
 curl -X POST \
   'https://in.appcenter.ms/logs?Api-Version=1.0.0' \
   -H 'Content-Type: application/json' \
-  -H 'app-secret: 8e14e67c-7c91-40ac-8517-c62ece8424a6' \
+  -H 'app-secret: <app secret>' \
   -H 'install-id: 00000000-0000-0000-0000-000000000001' \
   -d '{
   "logs":
@@ -595,7 +595,7 @@ Below is an example of uploading a crash report and an attachment in one call.
 curl -X POST \
   'https://in.appcenter.ms/logs?Api-Version=1.0.0' \
   -H 'Content-Type: application/json' \
-  -H 'app-secret: 8e14e67c-7c91-40ac-8517-c62ece8424a6' \
+  -H 'app-secret: <app secret>' \
   -H 'install-id: 00000000-0000-0000-0000-000000000001' \
   -d '{
   "logs": [
