@@ -65,6 +65,14 @@ When you publish your application to the store, the .NET Native compilation happ
 4. Click on **Show packages** on the top-right corner for the **Submission** (version) you want symbols for.
 5. Locate the package for the version you need symbols for, and click on links for all the supported architectures to download all symbols (such as the **Download Windows 10 symbol file (x64)** link).
 
+> [!NOTE]
+> Your application must declare a dependency on any version of .NET Native to generate debug symbols.
+> This declaration should be included in the `<Dependencies>` section of your `AppxManifest.xml`. Example:
+> ```xml
+> <PackageDependency Name="Microsoft.NET.Native.Framework.2.2" MinVersion="2.2.29512.0" Publisher="CN=Microsoft Corporation, 0=Microsoft Corporation, L=Redmond, S=Washington, C=US"/>
+> <PackageDependency Name="Microsoft.NET.Native.Runtime.2.2" MinVersion="2 2.28604.0" Publisher="CN=Microsoft Corporation, 0=Microsoft Corporation, L=Redmond, S=Washington, C=US"/>
+> ```
+
 #### App Center Portal
 [!INCLUDE [symbol upload ui](includes/symbol-upload-ui.md)]
 
