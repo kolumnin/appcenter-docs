@@ -89,7 +89,7 @@ Unlike iOS, Android projects don't need any special startup code.
 
 ## Writing UITests
 
-For information about writing UITests, see [UITest documentation](~/test-cloud/frameworks/uitest/index.md). The steps below are a summary, specifically describing how the [Xamarin.Forms demo **UsingUITest**](/samples/xamarin/xamarin-forms-samples/usinguitest/) is built.
+For information about writing UITests, see [UITest documentation](~/test-cloud/frameworks/uitest/index.md).
 
 ### Use AutomationId in the Xamarin.Forms UI
 
@@ -146,7 +146,7 @@ It is possible to add a new Xamarin.UITest project to an existing solution manua
 
     The new project also has two classes in it. **AppInitializer** contains code to help initialize and setup tests. The other class, **Tests**, contains boilerplate code to help start the UITests.
 
-1. Select **View > Tests** to display the Unit Test pad. Expand **UsingUITest > UsingUITest.UITests > Test Apps**:
+1. Select **View > Tests** to display the Unit Test pad.
 
     ![Unit Test Pad](images/get-started-xamarin-forms-04-unit-test-pad-xs.png "Unit Test Pad")
 
@@ -191,5 +191,4 @@ For information about how to submit tests to App Center Test, see [Submitting UI
 
 ## Related links
 
-- [UITestSample](/samples/xamarin/xamarin-forms-samples/usinguitest/)
 - [NUnit](http://www.nunit.org)
