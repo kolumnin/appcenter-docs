@@ -30,7 +30,7 @@ Refer to [Xamarin.UITest](~/test-cloud/frameworks/uitest/index.md) to confirm yo
 ## Adding UITest support to Xamarin.Forms apps
 UITest automates the user interface by activating controls on the screen and providing input anywhere a user would normally interact with the application. To enable tests that can *press a button* or *enter text in a box* the test code will need a way to identify the controls on the screen.
 
-To enable the UITest code to reference controls, each control needs a unique identifier. In Xamarin.Forms, the recommended way to set this identifier is by using the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin-forms) property as shown below:
+To enable the UITest code to reference controls, each control needs a unique identifier. In Xamarin.Forms, the recommended way to set this identifier is by using the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) property as shown below:
 
 ```csharp
 var b = new Button {
@@ -43,7 +43,7 @@ var l = new Label {
 };
 ```
 
-The [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin-forms) property can also be set in XAML:
+The [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) property can also be set in XAML:
 
 ```xaml
 <Button x:Name="b" AutomationId="MyButton" Text="Click me"/>
@@ -51,12 +51,12 @@ The [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin
 ```
 
 > [!NOTE]
-> [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin-forms) is a [`BindableProperty`](/dotnet/api/xamarin.forms.bindableproperty?view=xamarin-forms) and so can also be set with a binding expression.
+> [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) is a [`BindableProperty`](/dotnet/api/xamarin.forms.bindableproperty) and so can also be set with a binding expression.
 
-A unique [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin-forms) should be added to all controls that are required for testing (including buttons, text entries, and labels whose value might need to be queried).
+A unique [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) should be added to all controls that are required for testing (including buttons, text entries, and labels whose value might need to be queried).
 
 > [!WARNING]
-> An `InvalidOperationException` will be thrown if an attempt is made to set the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin-forms) property of an [`Element`](/dotnet/api/xamarin.forms.element?view=xamarin-forms) more than once.
+> An `InvalidOperationException` will be thrown if an attempt is made to set the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) property of an [`Element`](/dotnet/api/xamarin.forms.element) more than once.
 
 ### iOS application project
 To run tests on iOS, the [Xamarin Test Cloud Agent NuGet package](https://www.nuget.org/packages/Xamarin.TestCloud.Agent/) must be added to the project. Once it's been added, copy the following code into the `AppDelegate.FinishedLaunching` method:
@@ -93,16 +93,16 @@ For information about writing UITests, see [UITest documentation](~/test-cloud/f
 
 ### Use AutomationId in the Xamarin.Forms UI
 
-Before any UITests can be written, the Xamarin.Forms application user interface must be scriptable. Ensure that all controls in the user interface have a [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin-forms) so that they can be referenced in test code.
+Before any UITests can be written, the Xamarin.Forms application user interface must be scriptable. Ensure that all controls in the user interface have a [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) so that they can be referenced in test code.
 
 #### Referring to the AutomationId in UITests
 
-When writing UITests, the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin-forms) value is exposed differently on each platform:
+When writing UITests, the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) value is exposed differently on each platform:
 
 - **iOS** uses the `id` field.
 - **Android** uses the `label` field.
 
-To write cross-platform UITests that will find the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin-forms) on both iOS and Android, use the `Marked` test query:
+To write cross-platform UITests that will find the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) on both iOS and Android, use the `Marked` test query:
 
 ```csharp
 app.Query(c=>c.Marked("MyButton"))
@@ -185,7 +185,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 After adding Xamarin.UITest to the Xamarin.Forms solution, it's possible to create UITests, run them locally, and submit them to App Center Test.
 
 ## Summary
-Xamarin.Forms applications can be easily tested with **Xamarin.UITest** using a simple mechanism to expose the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid?view=xamarin-forms) as a unique view identifier for test automation. Once a UITest project has been added to a Xamarin.Forms solution, the steps for writing and running the tests for a Xamarin.Forms application are the same as for a Xamarin.Android or Xamarin.iOS application.
+Xamarin.Forms applications can be easily tested with **Xamarin.UITest** using a simple mechanism to expose the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) as a unique view identifier for test automation. Once a UITest project has been added to a Xamarin.Forms solution, the steps for writing and running the tests for a Xamarin.Forms application are the same as for a Xamarin.Android or Xamarin.iOS application.
 
 For information about how to submit tests to App Center Test, see [Submitting UITests for Xamarin.Android](~/test-cloud/frameworks/uitest/android/index.md) or [Submitting UITests for Xamarin.iOS](~/test-cloud/frameworks/uitest/ios/upload.md). For more information about UITest, see [App Center Test documentation](~/test-cloud/index.md).
 
