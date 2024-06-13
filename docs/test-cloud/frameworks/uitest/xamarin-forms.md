@@ -30,7 +30,7 @@ Refer to [Xamarin.UITest](~/test-cloud/frameworks/uitest/index.md) to confirm yo
 ## Adding UITest support to Xamarin.Forms apps
 UITest automates the user interface by activating controls on the screen and providing input anywhere a user would normally interact with the application. To enable tests that can *press a button* or *enter text in a box* the test code will need a way to identify the controls on the screen.
 
-To enable the UITest code to reference controls, each control needs a unique identifier. In Xamarin.Forms, the recommended way to set this identifier is by using the [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) property as shown below:
+To enable the UITest code to reference controls, each control needs a unique identifier. In Xamarin.Forms, the recommended way to set this identifier is by using the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) property as shown below:
 
 ```csharp
 var b = new Button {
@@ -43,7 +43,7 @@ var l = new Label {
 };
 ```
 
-The [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) property can also be set in XAML:
+The [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) property can also be set in XAML:
 
 ```xaml
 <Button x:Name="b" AutomationId="MyButton" Text="Click me"/>
@@ -51,12 +51,12 @@ The [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) property can also 
 ```
 
 > [!NOTE]
-> [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) is a [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) and so can also be set with a binding expression.
+> [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) is a [`BindableProperty`](/dotnet/api/xamarin.forms.bindableproperty) and so can also be set with a binding expression.
 
-A unique [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) should be added to all controls that are required for testing (including buttons, text entries, and labels whose value might need to be queried).
+A unique [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) should be added to all controls that are required for testing (including buttons, text entries, and labels whose value might need to be queried).
 
 > [!WARNING]
-> An `InvalidOperationException` will be thrown if an attempt is made to set the [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) property of an [`Element`](xref:Xamarin.Forms.Element) more than once.
+> An `InvalidOperationException` will be thrown if an attempt is made to set the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) property of an [`Element`](/dotnet/api/xamarin.forms.element) more than once.
 
 ### iOS application project
 To run tests on iOS, the [Xamarin Test Cloud Agent NuGet package](https://www.nuget.org/packages/Xamarin.TestCloud.Agent/) must be added to the project. Once it's been added, copy the following code into the `AppDelegate.FinishedLaunching` method:
@@ -89,20 +89,20 @@ Unlike iOS, Android projects don't need any special startup code.
 
 ## Writing UITests
 
-For information about writing UITests, see [UITest documentation](~/test-cloud/frameworks/uitest/index.md). The steps below are a summary, specifically describing how the [Xamarin.Forms demo **UsingUITest**](/samples/xamarin/xamarin-forms-samples/usinguitest/) is built.
+For information about writing UITests, see [UITest documentation](~/test-cloud/frameworks/uitest/index.md).
 
 ### Use AutomationId in the Xamarin.Forms UI
 
-Before any UITests can be written, the Xamarin.Forms application user interface must be scriptable. Ensure that all controls in the user interface have a [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) so that they can be referenced in test code.
+Before any UITests can be written, the Xamarin.Forms application user interface must be scriptable. Ensure that all controls in the user interface have a [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) so that they can be referenced in test code.
 
 #### Referring to the AutomationId in UITests
 
-When writing UITests, the [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) value is exposed differently on each platform:
+When writing UITests, the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) value is exposed differently on each platform:
 
 - **iOS** uses the `id` field.
 - **Android** uses the `label` field.
 
-To write cross-platform UITests that will find the [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) on both iOS and Android, use the `Marked` test query:
+To write cross-platform UITests that will find the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) on both iOS and Android, use the `Marked` test query:
 
 ```csharp
 app.Query(c=>c.Marked("MyButton"))
@@ -146,7 +146,7 @@ It is possible to add a new Xamarin.UITest project to an existing solution manua
 
     The new project also has two classes in it. **AppInitializer** contains code to help initialize and setup tests. The other class, **Tests**, contains boilerplate code to help start the UITests.
 
-1. Select **View > Tests** to display the Unit Test pad. Expand **UsingUITest > UsingUITest.UITests > Test Apps**:
+1. Select **View > Tests** to display the Unit Test pad.
 
     ![Unit Test Pad](images/get-started-xamarin-forms-04-unit-test-pad-xs.png "Unit Test Pad")
 
@@ -185,11 +185,10 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 After adding Xamarin.UITest to the Xamarin.Forms solution, it's possible to create UITests, run them locally, and submit them to App Center Test.
 
 ## Summary
-Xamarin.Forms applications can be easily tested with **Xamarin.UITest** using a simple mechanism to expose the [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) as a unique view identifier for test automation. Once a UITest project has been added to a Xamarin.Forms solution, the steps for writing and running the tests for a Xamarin.Forms application are the same as for a Xamarin.Android or Xamarin.iOS application.
+Xamarin.Forms applications can be easily tested with **Xamarin.UITest** using a simple mechanism to expose the [`AutomationId`](/dotnet/api/xamarin.forms.element.automationid) as a unique view identifier for test automation. Once a UITest project has been added to a Xamarin.Forms solution, the steps for writing and running the tests for a Xamarin.Forms application are the same as for a Xamarin.Android or Xamarin.iOS application.
 
 For information about how to submit tests to App Center Test, see [Submitting UITests for Xamarin.Android](~/test-cloud/frameworks/uitest/android/index.md) or [Submitting UITests for Xamarin.iOS](~/test-cloud/frameworks/uitest/ios/upload.md). For more information about UITest, see [App Center Test documentation](~/test-cloud/index.md).
 
 ## Related links
 
-- [UITestSample](/samples/xamarin/xamarin-forms-samples/usinguitest/)
 - [NUnit](http://www.nunit.org)
